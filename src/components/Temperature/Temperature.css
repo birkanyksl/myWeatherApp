@@ -1,0 +1,52 @@
+.temperature-container {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.301);
+  padding: 0.5rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.199);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 4px 1px rgba(214, 205, 205, 0.158);
+}
+
+.day-time-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.day-time-container span {
+  font-weight: 500;
+}
+
+.city-name {
+  display: flex;
+  gap: 0.25rem;
+  padding-top: 0.1rem;
+  font-weight: 500;
+}
+
+.temp {
+  position: relative;
+  top: -2rem;
+  font-size: 5rem;
+  font-weight: 700;
+  align-self: center;
+  margin: auto;
+}
+
+.description {
+  text-transform: capitalize;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.weather-info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-info-container p span {
+  display: flex;
+  flex-direction: column;
+}
