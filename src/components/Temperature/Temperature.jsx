@@ -1,26 +1,54 @@
 /* eslint-disable react/prop-types */
+import { useEffect } from "react";
 import "./Temperature.css";
+import { useState } from "react";
 const Temperature = ({ weatherData }) => {
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const timerID = setInterval(() => setCurrentTime(new Date()), 1000);
+    return () => clearInterval(timerID);
+  }, []);
+
   if (!weatherData) {
     return <div>Loading...</div>;
   }
+  // Icon
 
   const iconBaseUrl = "http://openweathermap.org/img/wn/";
   const iconCode = weatherData.weather[0].icon;
   const iconUrl = `${iconBaseUrl}${iconCode}@2x.png`;
 
+  //Celcius
+
+  const kelvinToCelsius = (kelvin) => {
+    return kelvin - 273.15;
+  };
+  const temperatureCelsius = Math.round(kelvinToCelsius(weatherData.main.temp));
+  const minTemperatureCelsius = Math.round(
+    kelvinToCelsius(weatherData.main.temp_min)
+  );
+  const maxTemperatureCelsius = Math.round(
+    kelvinToCelsius(weatherData.main.temp_max)
+  );
+
+  //Tarih
+
+  const formattedDate = currentTime.toLocaleDateString();
+  const formattedTime = currentTime.toLocaleTimeString();
+
   return (
     <div className="temperature-container">
       <p className="day-time-container">
-        <span>15.03.2024</span>
-        <span>14.30</span>
+        <span>{formattedDate}</span>
+        <span>{formattedTime}</span>
       </p>
 
       <p className="city-name">
         <span>{weatherData?.name}</span>
       </p>
 
-      <p className="temp">8°C</p>
+      <p className="temp">{temperatureCelsius}°C</p>
 
       <div className="weather-info-container">
         <div className="weather-info">
@@ -29,8 +57,8 @@ const Temperature = ({ weatherData }) => {
         </div>
 
         <p className="daily-low-high">
-          <span>Low: 8°C</span>
-          <span>High: 12°C</span>
+          <span>Low: {minTemperatureCelsius}°C</span>
+          <span>High: {maxTemperatureCelsius}°C</span>
         </p>
       </div>
     </div>

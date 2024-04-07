@@ -49,11 +49,18 @@
 
 .weather-info {
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
-.weather-info-container p {
-  display: flex;
-  justify-content: left;
+.weather-info img {
+  width: 6rem;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+.weather-info .description {
+  margin-left: 0.5rem;
 }
 
 .weather-info-container .daily-low-high {
