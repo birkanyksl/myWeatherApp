@@ -1,11 +1,12 @@
+/* eslint-disable react/prop-types */
 import SearchInput from "./SearchInput";
 import "./Navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ fetchData }) => {
   return (
     <div className="navbar-container">
-      <h1>WeatherApp</h1>
-      {<SearchInput />}
+      <h1>myWeatherApp</h1>
+      <SearchInput fetchData={fetchData} />
     </div>
   );
 };
