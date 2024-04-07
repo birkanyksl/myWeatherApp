@@ -2,6 +2,8 @@
 import { useEffect } from "react";
 import "./Temperature.css";
 import { useState } from "react";
+import getWeatherIcon from "./weatherIcons";
+
 const Temperature = ({ weatherData }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
 
@@ -15,9 +17,17 @@ const Temperature = ({ weatherData }) => {
   }
   // Icon
 
-  const iconBaseUrl = "http://openweathermap.org/img/wn/";
-  const iconCode = weatherData.weather[0].icon;
-  const iconUrl = `${iconBaseUrl}${iconCode}@2x.png`;
+  // const iconBaseUrl = "http://openweathermap.org/img/wn/";
+  // const iconCode = weatherData.weather[0].icon;
+  // const iconUrl = `${iconBaseUrl}${iconCode}@2x.png`;
+
+  // const iconFolderPath = "img/weatherconditions/";
+
+  // const getIconPath = (description) => {
+  //   const normalizedDescription = description.toLowerCase().replace(/\s/g, "-");
+  //   return `${iconFolderPath}${normalizedDescription}.png`;
+  // };
+  const iconPath = getWeatherIcon(weatherData.weather[0].id.toString());
 
   //Celcius
 
@@ -52,7 +62,7 @@ const Temperature = ({ weatherData }) => {
 
       <div className="weather-info-container">
         <div className="weather-info">
-          <img src={iconUrl} alt="Weather Icon" />
+          <img src={iconPath} alt="Weather Icon" />
           <p className="description">{weatherData.weather[0].description}</p>
         </div>
 
