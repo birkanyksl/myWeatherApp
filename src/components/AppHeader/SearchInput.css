@@ -25,3 +25,13 @@
   background-color: rgba(0, 0, 0, 0.301);
   box-shadow: 0 0 4px 1px rgba(187, 183, 183, 0.158);
 }
+
+@media screen and (max-width: 768px) {
+  .search-input-container {
+    margin-right: 0;
+  }
+
+  .search-input {
+    max-width: 100%;
+  }
+}

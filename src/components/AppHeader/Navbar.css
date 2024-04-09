@@ -1,0 +1,21 @@
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.1rem solid #cccccc49;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.navbar-container h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

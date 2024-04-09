@@ -1,5 +1,10 @@
-.temperature-container {
-  width: 24rem;
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0.6rem;
+}
+
+.current-container {
   display: flex;
   flex-direction: column;
   background-color: rgba(87, 84, 84, 0.301);
@@ -13,6 +18,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: large;
 }
 
 .day-time-container span {
@@ -29,7 +35,7 @@
 
 .temp {
   position: relative;
-  font-size: 5rem;
+  font-size: 6rem;
   font-weight: 700;
   align-self: center;
   margin: auto;
@@ -44,17 +50,18 @@
 .weather-info-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .weather-info {
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .weather-info img {
-  width: 6rem;
+  width: 10rem;
   height: auto;
   margin-right: 0.5rem;
 }
@@ -65,6 +72,32 @@
 
 .weather-info-container .daily-low-high {
   display: flex;
+  justify-content: left;
   flex-direction: column;
-  margin-left: -20rem;
+}
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+  .day-time-container {
+    font-size: x-large;
+  }
+
+  .current-container,
+  .forecast-container {
+    padding: 0.5rem;
+  }
+
+  .temp {
+    font-size: 6rem;
+  }
+  .description {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
 }

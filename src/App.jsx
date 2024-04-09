@@ -2,12 +2,11 @@ import { useState } from "react";
 import "./App.css";
 
 import axios from "axios";
-import Navbar from "./components/Navbar/Navbar";
-import Temperature from "./components/Temperature/Temperature";
+import Navbar from "./components/AppHeader/Navbar";
+import Main from "./components/AppBody/Main";
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
-
   const fetchData = async (location) => {
     try {
       const response = await axios.get(
@@ -25,7 +24,7 @@ function App() {
   return (
     <>
       <Navbar fetchData={fetchData} />
-      <Temperature weatherData={weatherData} />
+      <Main weatherData={weatherData} />
     </>
   );
 }

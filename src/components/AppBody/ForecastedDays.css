@@ -1,0 +1,41 @@
+.forecast-container {
+  display: grid;
+  grid-template-rows: repeat(5, minmax(50px, 1fr));
+  grid-gap: 1rem;
+  background-color: rgba(87, 84, 84, 0.301);
+  padding: 1rem;
+  max-height: 520.766px;
+  border: 1px solid rgba(255, 255, 255, 0.199);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 4px 1px rgba(214, 205, 205, 0.158);
+}
+
+.forecast-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.199);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 4px 1px rgba(214, 205, 205, 0.356);
+  padding: 1rem;
+}
+
+.forecast-description {
+  flex: 1;
+  gap: 1rem;
+}
+
+.forecast-item span {
+  margin: 1rem;
+  font-size: 0.8rem;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.forecast-item h3 {
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.5;
+}
