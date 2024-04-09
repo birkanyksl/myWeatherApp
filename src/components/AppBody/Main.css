@@ -1,17 +1,22 @@
 .main-container {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 0.6rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .current-container {
   display: flex;
   flex-direction: column;
   background-color: rgba(87, 84, 84, 0.301);
-  padding: 0.5rem 2rem;
+  padding: 2rem 2rem;
   border: 1px solid rgba(255, 255, 255, 0.199);
   border-radius: 0.5rem;
   box-shadow: 0 0 4px 1px rgba(214, 205, 205, 0.158);
+  min-width: 35%;
+  margin: 1rem;
 }
 
 .day-time-container {
@@ -22,7 +27,7 @@
 }
 
 .day-time-container span {
-  font-weight: 500;
+  font-weight: 900;
 }
 
 .city-name {
@@ -35,10 +40,11 @@
 
 .temp {
   position: relative;
+  margin: 0;
+  padding: 0;
   font-size: 6rem;
   font-weight: 700;
   align-self: center;
-  margin: auto;
 }
 
 .description {
@@ -61,9 +67,8 @@
 }
 
 .weather-info img {
-  width: 10rem;
+  width: 15rem;
   height: auto;
-  margin-right: 0.5rem;
 }
 
 .weather-info .description {
@@ -72,40 +77,57 @@
 
 .weather-info-container .daily-low-high {
   display: flex;
-  justify-content: left;
+  justify-content: flex-start;
   flex-direction: column;
 }
 
-@media screen and (max-width: 768px) {
-  .main-container {
-    grid-template-columns: 1fr;
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .current-container {
+    min-width: 65%;
+    height: auto;
+    padding: 1rem 1rem;
   }
-  .day-time-container {
-    font-size: x-large;
+  .weather-info img {
+    width: 20rem;
+    height: auto;
   }
-
+  .daily-low-high span {
+    font-size: 1.2rem;
+  }
+  .weather-info .description {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
   .temp {
-    font-size: 6rem;
-  }
-  .description {
-    font-size: 2rem;
+    font-size: 5rem;
   }
 }
-@media screen and (max-width: 768px) {
-  .main-container {
-    grid-template-columns: 1fr;
-  }
 
-  .forecast-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
+@media only screen and (min-width: 501px) and (max-width: 767px) {
+  .current-container {
+    min-width: 65%;
+    height: auto;
+    padding: 0.5rem 0.5rem;
   }
-
-  .forecast-item span {
-    margin: 0.2rem;
-    font-size: 0.6rem;
-    text-align: justify;
-    line-height: 3;
+  .weather-info img {
+    width: 10rem;
+    height: auto;
+  }
+  .daily-low-high span {
+    font-size: 1.2rem;
+  }
+  .weather-info .description {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  .temp {
+    font-size: 4rem;
+  }
+  .city-name {
+    font-size: 1rem;
+  }
+  .day-time-container span {
+    font-size: 1rem;
+    font-weight: 700;
   }
 }

@@ -2,11 +2,11 @@
 import SearchInput from "./SearchInput";
 import "./Navbar.css";
 
-const Navbar = ({ fetchData }) => {
+const Navbar = ({ fetchData, weatherData }) => {
   return (
     <div className="navbar-container">
       <h1>myWeatherApp</h1>
-      <SearchInput fetchData={fetchData} />
+      {weatherData && <SearchInput fetchData={fetchData} />}
     </div>
   );
 };

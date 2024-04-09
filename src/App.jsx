@@ -23,8 +23,8 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar fetchData={fetchData} />
-      <Main weatherData={weatherData} />
+      <Navbar fetchData={fetchData} weatherData={weatherData} />
+      <Main weatherData={weatherData} fetchData={fetchData} />
     </div>
   );
 }

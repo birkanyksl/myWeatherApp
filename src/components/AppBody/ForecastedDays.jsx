@@ -6,18 +6,6 @@ const kelvinToCelcius = (kelvin) => {
   return kelvin - 273.15;
 };
 
-const tableStyle = {
-  width: "100%",
-  border: "none",
-  textAlign: "center",
-  justifyContent: "center",
-  margin: "auto",
-};
-
-const cellStyle = {
-  padding: "0.1rem",
-};
-
 const ForecastedDays = () => {
   const [data, setData] = useState(null);
   const location = "Ankara";
@@ -108,28 +96,25 @@ const ForecastedDays = () => {
             <h3>{data.date}</h3>
 
             <div className="forecast-description">
-              <table style={tableStyle}>
+              <table className="table-class">
                 <thead>
                   <tr>
-                    <th style={cellStyle}>
+                    <th>
                       <img src="/img/forecasticons/temp.png" alt="" />
                     </th>
-                    <th style={cellStyle}>
-                      {" "}
+                    <th>
                       <img src="/img/forecasticons/min.png" alt="" />
                     </th>
-                    <th style={cellStyle}>
-                      {" "}
+                    <th>
                       <img src="/img/forecasticons/max.png" alt="" />
                     </th>
-                    <th style={cellStyle}>
-                      {" "}
+                    <th>
                       <img src="/img/forecasticons/windock.png" alt="" />
                     </th>
-                    <th style={cellStyle}>
+                    <th>
                       <img src="/img/forecasticons/humidity.png" alt="" />
                     </th>
-                    <th style={cellStyle}>Hava Durumu Kimliği:</th>
+                    <th>Hava Durumu Kimliği:</th>
                   </tr>
                 </thead>
                 <tbody>

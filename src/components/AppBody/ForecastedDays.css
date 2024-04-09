@@ -4,15 +4,14 @@
   grid-gap: 1rem;
   background-color: rgba(87, 84, 84, 0.301);
   padding: 1rem;
-  max-height: 520.766px;
   border: 1px solid rgba(255, 255, 255, 0.199);
   border-radius: 0.5rem;
   box-shadow: 0 0 4px 1px rgba(214, 205, 205, 0.158);
+  min-width: 35%;
 }
 
 .forecast-item {
   flex-direction: row;
-
   justify-content: flex-start;
   align-items: center;
   gap: 2rem;
@@ -49,20 +48,41 @@
   padding-right: 0.1rem;
 }
 
-@media screen and (max-width: 600px) {
+.table-class {
+  width: "100%";
+  border: "none";
+  text-align: "center";
+  justify-content: "center";
+  margin: "auto";
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   .forecast-container {
-    max-height: unset;
+    min-width: 65%;
+  }
+  .table-class td {
+    padding: 0.3rem;
+    font-size: 1rem;
   }
 }
 
-@media screen and (min-width: 601px) and (max-width: 900px) {
+@media only screen and (min-width: 501px) and (max-width: 767px) {
   .forecast-container {
-    max-height: unset;
+    min-width: 65%;
   }
-}
+  .forecast-description img {
+    width: 1rem;
+    height: auto;
+    padding-right: 0.05rem;
+  }
 
-@media screen and (min-width: 901px) {
-  .forecast-container {
-    max-height: unset;
+  .forecast-item h3 {
+    font-size: 0.8rem;
+    margin: 0;
+    line-height: 1;
+  }
+  .table-class td {
+    padding: 0.2rem;
+    font-size: 0.8rem;
   }
 }

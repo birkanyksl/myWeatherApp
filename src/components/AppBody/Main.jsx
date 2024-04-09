@@ -2,11 +2,17 @@
 
 import CurrentDay from "./CurrentDay";
 import ForecastedDays from "./ForecastedDays";
+import SearchInput from "../AppHeader/SearchInput";
+
 import "./Main.css";
 
-const Main = ({ weatherData }) => {
+const Main = ({ weatherData, fetchData }) => {
   if (!weatherData) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <SearchInput fetchData={fetchData} />
+      </div>
+    );
   }
 
   return (
