@@ -6,6 +6,18 @@ const kelvinToCelcius = (kelvin) => {
   return kelvin - 273.15;
 };
 
+const tableStyle = {
+  width: "100%",
+  border: "none",
+  textAlign: "center",
+  justifyContent: "center",
+  margin: "auto",
+};
+
+const cellStyle = {
+  padding: "0.1rem",
+};
+
 const ForecastedDays = () => {
   const [data, setData] = useState(null);
   const location = "Ankara";
@@ -94,24 +106,75 @@ const ForecastedDays = () => {
         return (
           <div className="forecast-item" key={data.date}>
             <h3>{data.date}</h3>
-            <div className="forecast-description">
-              <div className="forecast-temperatures">
-                <span>
-                  Temperature: {kelvinToCelcius(data.averageTemp).toFixed(0)}°C
-                </span>
-                <span>
-                  Low: {kelvinToCelcius(data.averageMinTemp).toFixed(0)}
-                  °C
-                </span>
-                <span>
-                  High: {kelvinToCelcius(data.averageMaxTemp).toFixed(0)}
-                  °C
-                </span>
-                <span> Wind Speed: {data.averageWindSpeed.toFixed(2)} m/s</span>
 
-                <span>Humidity: {data.averageHumidity.toFixed(2)}%</span>
+            <div className="forecast-description">
+              <table style={tableStyle}>
+                <thead>
+                  <tr>
+                    <th style={cellStyle}>
+                      <img src="/img/forecasticons/temp.png" alt="" />
+                    </th>
+                    <th style={cellStyle}>
+                      {" "}
+                      <img src="/img/forecasticons/min.png" alt="" />
+                    </th>
+                    <th style={cellStyle}>
+                      {" "}
+                      <img src="/img/forecasticons/max.png" alt="" />
+                    </th>
+                    <th style={cellStyle}>
+                      {" "}
+                      <img src="/img/forecasticons/windock.png" alt="" />
+                    </th>
+                    <th style={cellStyle}>
+                      <img src="/img/forecasticons/humidity.png" alt="" />
+                    </th>
+                    <th style={cellStyle}>Hava Durumu Kimliği:</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td> {kelvinToCelcius(data.averageTemp).toFixed(0)}°C</td>
+                    <td>
+                      {kelvinToCelcius(data.averageMinTemp).toFixed(0)}
+                      °C
+                    </td>
+                    <td>
+                      {kelvinToCelcius(data.averageMaxTemp).toFixed(0)}
+                      °C
+                    </td>
+                    <td>{data.averageWindSpeed.toFixed(2)} m/s</td>
+                    <td>{data.averageHumidity.toFixed(2)}%</td>
+                    <td>{data.weatherIds.join(", ")}</td>
+                  </tr>
+                </tbody>
+              </table>
+              {/* <div className="forecast-temperatures">
+                <span>
+                  <img src="/img/forecasticons/temp.png" alt="" />
+                  {kelvinToCelcius(data.averageTemp).toFixed(0)}°C
+                </span>
+                <span>
+                  <img src="/img/forecasticons/min.png" alt="" />
+                  {kelvinToCelcius(data.averageMinTemp).toFixed(0)}
+                  °C
+                </span>
+                <span>
+                  <img src="/img/forecasticons/max.png" alt="" />
+                  {kelvinToCelcius(data.averageMaxTemp).toFixed(0)}
+                  °C
+                </span>
+                <span>
+                  <img src="/img/forecasticons/windock.png" alt="" />
+                  {data.averageWindSpeed.toFixed(2)} m/s
+                </span>
+
+                <span>
+                  <img src="/img/forecasticons/humidity.png" alt="" />
+                  {data.averageHumidity.toFixed(2)}%
+                </span>
                 <span>Hava Durumu Kimliği: {data.weatherIds.join(", ")}</span>
-              </div>
+              </div> */}
             </div>
           </div>
         );

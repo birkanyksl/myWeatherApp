@@ -11,8 +11,8 @@
 }
 
 .forecast-item {
-  display: flex;
   flex-direction: row;
+
   justify-content: flex-start;
   align-items: center;
   gap: 2rem;
@@ -27,15 +27,42 @@
   gap: 1rem;
 }
 
+.forecast-temperatures {
+  display: flex;
+}
+
 .forecast-item span {
   margin: 1rem;
   font-size: 0.8rem;
   text-align: justify;
   line-height: 1.5;
 }
-
 .forecast-item h3 {
   font-size: 1rem;
   margin: 0;
   line-height: 1.5;
+}
+
+.forecast-description img {
+  width: 1.5rem;
+  height: auto;
+  padding-right: 0.1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .forecast-container {
+    max-height: unset;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .forecast-container {
+    max-height: unset;
+  }
+}
+
+@media screen and (min-width: 901px) {
+  .forecast-container {
+    max-height: unset;
+  }
 }

@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  background-color: rgb(14, 13, 13);
+
   color: rgba(255, 255, 255, 0.87);
 
   font-synthesis: none;
@@ -17,4 +17,6 @@ body {
   margin: 0 3rem;
   padding: 0;
   font-family: Arial, sans-serif;
+  background-image: url("./img/backgrounds/bg.jpg");
+  background-size: initial;
 }

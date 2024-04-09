@@ -84,11 +84,6 @@
     font-size: x-large;
   }
 
-  .current-container,
-  .forecast-container {
-    padding: 0.5rem;
-  }
-
   .temp {
     font-size: 6rem;
   }
@@ -99,5 +94,18 @@
 @media screen and (max-width: 768px) {
   .main-container {
     grid-template-columns: 1fr;
+  }
+
+  .forecast-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .forecast-item span {
+    margin: 0.2rem;
+    font-size: 0.6rem;
+    text-align: justify;
+    line-height: 3;
   }
 }

@@ -22,10 +22,10 @@ function App() {
   };
 
   return (
-    <>
+    <div className="App">
       <Navbar fetchData={fetchData} />
       <Main weatherData={weatherData} />
-    </>
+    </div>
   );
 }
 
