@@ -33,26 +33,27 @@ const CurrentDay = ({ weatherData }) => {
 
   return (
     <div className="current-container">
-      <div className="day-time-container">
-        <span>{formattedDate}</span>
-        <span>{formattedTime}</span>
-      </div>
-
-      <p className="city-name">
-        <span>{weatherData?.name}</span>
-      </p>
-
-      <p className="temp">{temperatureCelsius}°C</p>
-
-      <div className="weather-info-container">
-        <div className="weather-info">
-          <img src={iconPath} alt="Weather Icon" />
-          <p className="description">{weatherData.weather[0].description}</p>
+      <div className="current-data-container">
+        <div className="current-data">
+          <p className="city-name">
+            <span>{weatherData?.name}</span>
+          </p>
+          <span>{formattedDate}</span>
+          <span>{formattedTime}</span>
         </div>
 
-        <div className="daily-low-high">
-          <span>Low: {minTemperatureCelsius}°C</span>
-          <span>High: {maxTemperatureCelsius}°C</span>
+        <div className="weather-info-container">
+          <div className="weather-info">
+            <p>{temperatureCelsius}°C</p>
+            <span>
+              {minTemperatureCelsius}°C / {maxTemperatureCelsius}°C
+            </span>
+            <span>{weatherData.weather[0].description}</span>
+          </div>
+
+          <div className="current-data-img">
+            <img src={iconPath} alt="Weather Icon" />
+          </div>
         </div>
       </div>
     </div>
