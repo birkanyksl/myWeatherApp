@@ -1,0 +1,8 @@
+.current-extra-container {
+  color: black;
+  background-color: rgba(245, 245, 245, 0.61);
+  border-radius: 0.7rem;
+  box-shadow: 1px 10px 20px rgba(187, 164, 164, 0.075),
+    inset -2px -5px 5px rgba(0, 0, 0, 0.432);
+  width: auto;
+}

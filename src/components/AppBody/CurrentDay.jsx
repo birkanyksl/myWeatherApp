@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import getWeatherIcon from "./weatherIcons";
+import "./CurrentDay.css";
 
 const CurrentDay = ({ weatherData }) => {
   const [currentTime, setCurrentTime] = useState(new Date());

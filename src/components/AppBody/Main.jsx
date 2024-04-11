@@ -3,8 +3,8 @@
 import CurrentDay from "./CurrentDay";
 import ForecastedDays from "./ForecastedDays";
 import SearchInput from "../AppHeader/SearchInput";
-
 import "./Main.css";
+import CurrentDayExtra from "./CurrentDayExtra";
 
 const Main = ({
   weatherData,
@@ -27,8 +27,13 @@ const Main = ({
 
   return (
     <div className="main-container">
-      <CurrentDay weatherData={weatherData} />
-      <ForecastedDays data={data} convertedData={convertedData} />
+      <div className="div-currents">
+        <CurrentDay weatherData={weatherData} />
+        <CurrentDayExtra />
+      </div>
+      <div className="div-forecast">
+        <ForecastedDays data={data} convertedData={convertedData} />
+      </div>
     </div>
   );
 };

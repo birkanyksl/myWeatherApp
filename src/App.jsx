@@ -7,6 +7,8 @@ import Main from "./components/AppBody/Main";
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
+  const [data, setData] = useState(null);
+
   const fetchData = async (location) => {
     try {
       const response = await axios.get(
@@ -21,8 +23,7 @@ function App() {
     }
   };
 
-  const [data, setData] = useState(null);
-
+  //Günlük data forecast olarak openweatherdan alamadığım için 2. bir api kullanıldı.
   const fetchForecast = async (location) => {
     try {
       const response = await axios.get(
@@ -34,10 +35,6 @@ function App() {
       console.error("Error fetching forecast data:", error);
     }
   };
-
-  // if (location) {
-  //   fetchForecast();
-  // }
 
   return (
     <div className="App">

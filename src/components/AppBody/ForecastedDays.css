@@ -3,11 +3,11 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-
   padding: 1rem;
-  background-color: rgba(245, 245, 245, 0.61);
+  background-color: rgba(245, 245, 245, 0.733);
   border-radius: 0.7rem;
-  box-shadow: 0 0 4px 1px rgba(214, 205, 205, 0.158);
+  box-shadow: 1px 10px 20px rgba(230, 222, 222, 0.075),
+    inset -3px -5px 6px rgba(7, 6, 6, 0.534);
   width: auto;
 }
 
@@ -19,8 +19,7 @@
   margin: 0.5rem 0.3rem;
   font-size: 1rem;
   color: black;
-  background-color: rgba(245, 245, 245, 0.801);
-  border: 1px solid rgba(112, 104, 104, 0.623);
+  background-color: rgba(248, 244, 244, 0.13);
   border-radius: 0.8rem;
   box-shadow: 0 0 4px 1px rgba(214, 205, 205, 0.356);
   padding: 1.1rem;
