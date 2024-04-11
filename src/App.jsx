@@ -21,10 +21,37 @@ function App() {
     }
   };
 
+  const [data, setData] = useState(null);
+
+  const fetchForecast = async (location) => {
+    try {
+      const response = await axios.get(
+        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=H9XZ4B674XJH93UPCVSKVUUZJ`
+      );
+      setData(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error fetching forecast data:", error);
+    }
+  };
+
+  // if (location) {
+  //   fetchForecast();
+  // }
+
   return (
     <div className="App">
-      <Navbar fetchData={fetchData} weatherData={weatherData} />
-      <Main weatherData={weatherData} fetchData={fetchData} />
+      <Navbar
+        fetchData={fetchData}
+        weatherData={weatherData}
+        fetchForecast={fetchForecast}
+      />
+      <Main
+        weatherData={weatherData}
+        fetchData={fetchData}
+        data={data}
+        fetchForecast={fetchForecast}
+      />
     </div>
   );
 }

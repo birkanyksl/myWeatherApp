@@ -1,36 +1,12 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+/* eslint-disable react/prop-types */
 import "./ForecastedDays.css";
 
 const fahrenheitToCelsius = (fahrenheit) => {
   return (fahrenheit - 32) * (5 / 9);
 };
-
-const ForecastedDays = () => {
-  const [data, setData] = useState(null);
-
-  const location = "Ankara";
-
-  useEffect(() => {
-    const fetchForecast = async () => {
-      try {
-        const response = await axios.get(
-          `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=H9XZ4B674XJH93UPCVSKVUUZJ`
-        );
-        setData(response.data);
-        console.log(response.data);
-      } catch (error) {
-        console.error("Error fetching forecast data:", error);
-      }
-    };
-
-    if (location) {
-      fetchForecast();
-    }
-  }, [location]);
-
-  if (!data) {
-    return <div>Loading...</div>;
+const ForecastedDays = ({ data }) => {
+  if (!data || !data.days) {
+    return null;
   }
 
   const convertedData = data.days.slice(1, 7).map((day) => ({
@@ -39,7 +15,6 @@ const ForecastedDays = () => {
     tempmax: fahrenheitToCelsius(day.tempmax),
     tempmin: fahrenheitToCelsius(day.tempmin),
   }));
-
   return (
     <div className="forecast-container">
       {convertedData.map((day, index) => (

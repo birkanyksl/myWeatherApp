@@ -2,7 +2,7 @@
 import { useState } from "react";
 import "./SearchInput.css";
 
-const SearchInput = ({ fetchData }) => {
+const SearchInput = ({ fetchData, fetchForecast }) => {
   const [location, setLocation] = useState("");
 
   const inputChangeHandler = (e) => {
@@ -11,6 +11,7 @@ const SearchInput = ({ fetchData }) => {
 
   const searchHandler = () => {
     fetchData(location);
+    fetchForecast(location);
     setLocation("");
   };
 
