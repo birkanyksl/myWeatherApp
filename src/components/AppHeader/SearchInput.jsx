@@ -4,14 +4,17 @@ import "./SearchInput.css";
 
 const SearchInput = ({ fetchData, fetchForecast }) => {
   const [location, setLocation] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const inputChangeHandler = (e) => {
     setLocation(e.target.value);
   };
 
-  const searchHandler = () => {
-    fetchData(location);
-    fetchForecast(location);
+  const searchHandler = async () => {
+    setIsLoading(true);
+    await fetchData(location);
+    await fetchForecast(location);
+    setIsLoading(false);
     setLocation("");
   };
 
@@ -25,7 +28,7 @@ const SearchInput = ({ fetchData, fetchForecast }) => {
         value={location}
       />
       <button className="search-button" onClick={searchHandler}>
-        Search
+        {isLoading ? "Searching..." : "Search"}
       </button>
     </div>
   );

@@ -6,14 +6,8 @@ import SearchInput from "../AppHeader/SearchInput";
 import "./Main.css";
 import CurrentDayExtra from "./CurrentDayExtra";
 
-const Main = ({
-  weatherData,
-  fetchData,
-  convertedData,
-  data,
-  fetchForecast,
-}) => {
-  if (!weatherData) {
+const Main = ({ weatherData, fetchData, data, fetchForecast }) => {
+  if (!weatherData && !data) {
     return (
       <div className="noweather-data">
         <h1>
@@ -29,10 +23,10 @@ const Main = ({
     <div className="main-container">
       <div className="div-currents">
         <CurrentDay weatherData={weatherData} />
-        <CurrentDayExtra />
+        <CurrentDayExtra data={data} />
       </div>
       <div className="div-forecast">
-        <ForecastedDays data={data} convertedData={convertedData} />
+        <ForecastedDays data={data} />
       </div>
     </div>
   );

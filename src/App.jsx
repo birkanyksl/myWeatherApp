@@ -36,6 +36,10 @@ function App() {
     }
   };
 
+  // if (location) {
+  //   fetchForecast();
+  // }
+
   return (
     <div className="App">
       <Navbar
