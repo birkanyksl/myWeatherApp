@@ -17,6 +17,7 @@ const CurrentDayExtraItem = ({ data }) => {
                 {((data.currentConditions?.feelslike - 32) * (5 / 9)).toFixed(
                   0
                 )}
+                °C
               </span>
             </div>
           </div>
@@ -37,7 +38,7 @@ const CurrentDayExtraItem = ({ data }) => {
               <span>Wind Speed</span>
             </div>
             <div className="extra-data">
-              <span>25</span>
+              <span>{data.currentConditions.windspeed} km/h</span>
             </div>
           </div>
 
@@ -47,7 +48,7 @@ const CurrentDayExtraItem = ({ data }) => {
               <span>Air Humidity</span>
             </div>
             <div className="extra-data">
-              <span>25</span>
+              <span>{data.currentConditions.humidity}%</span>
             </div>
           </div>
 
@@ -57,7 +58,7 @@ const CurrentDayExtraItem = ({ data }) => {
               <span>UV Index</span>
             </div>
             <div className="extra-data">
-              <span>25</span>
+              <span>{data.currentConditions.uvindex}</span>
             </div>
           </div>
         </>
