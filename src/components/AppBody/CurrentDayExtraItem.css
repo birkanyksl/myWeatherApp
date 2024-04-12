@@ -33,12 +33,11 @@
 }
 
 .extra-data span {
-  font-size: 1.1rem;
   font-weight: 600;
 }
 
-@media (max-width: 875px) {
-  .extra-data span {
-    font-size: 1.4rem;
+@media (max-width: 976px) {
+  .extra-container {
+    row-gap: 1rem;
   }
 }

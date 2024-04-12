@@ -12,6 +12,7 @@ const CurrentDayExtraItem = ({ data }) => {
               <img src="./img/extraicons/fellsalike.png" alt="extra-img" />
               <span>Thermal Sensation</span>
             </div>
+
             <div className="extra-data">
               <span>
                 {((data.currentConditions?.feelslike - 32) * (5 / 9)).toFixed(

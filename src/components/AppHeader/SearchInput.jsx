@@ -23,7 +23,7 @@ const SearchInput = ({ fetchData, fetchForecast }) => {
       <input
         className="search-input"
         type="text"
-        placeholder="Bir şehir giriniz."
+        placeholder="Enter a city name"
         onChange={inputChangeHandler}
         value={location}
       />
