@@ -1,15 +1,18 @@
-/* eslint-disable react/prop-types */
 import "./ForecastedDays.css";
+import { useSelector } from "react-redux";
+import { selectForecastData } from "../../store/redux";
 
 const fahrenheitToCelsius = (fahrenheit) => {
   return (fahrenheit - 32) * (5 / 9);
 };
-const ForecastedDays = ({ data }) => {
-  if (!data || !data.days) {
+const ForecastedDays = () => {
+  const forecastData = useSelector(selectForecastData);
+
+  if (!forecastData || !forecastData.days) {
     return null;
   }
 
-  const convertedData = data.days.slice(1, 7).map((day) => ({
+  const convertedData = forecastData.days.slice(1, 7).map((day) => ({
     ...day,
     temp: fahrenheitToCelsius(day.temp),
     tempmax: fahrenheitToCelsius(day.tempmax),

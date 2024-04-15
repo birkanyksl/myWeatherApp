@@ -14,7 +14,7 @@
   margin: 0;
 }
 
-@media screen and (max-width: 875px) {
+@media screen and (max-width: 850px) {
   .navbar-container {
     flex-direction: column;
     align-items: center;

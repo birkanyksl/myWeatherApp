@@ -1,20 +1,63 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import "./SearchInput.css";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectIsLoading,
+  selectError,
+  setWeatherData,
+  setForecastData,
+  setLoading,
+  setError,
+} from "../../store/redux";
+import axios from "axios";
+import "./SearchInput.css";
 
-const SearchInput = ({ fetchData, fetchForecast }) => {
+const SearchInput = () => {
   const [location, setLocation] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
+  const dispatch = useDispatch();
 
   const inputChangeHandler = (e) => {
     setLocation(e.target.value);
   };
 
+  const fetchData = async (location) => {
+    try {
+      const response = await axios.get(
+        `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${
+          import.meta.env.REACT_APP_WEATHER_API_KEY
+        }`
+      );
+      return response.data;
+    } catch (error) {
+      throw new Error("Error while fetching weather data ❗ ");
+    }
+  };
+
+  const fetchForecast = async (location) => {
+    try {
+      const response = await axios.get(
+        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=H9XZ4B674XJH93UPCVSKVUUZJ`
+      );
+      return response.data;
+    } catch (error) {
+      throw new Error("Error fetching forecast data ❗");
+    }
+  };
+
   const searchHandler = async () => {
-    setIsLoading(true);
-    await fetchData(location);
-    await fetchForecast(location);
-    setIsLoading(false);
+    dispatch(setLoading(true));
+    try {
+      const weatherResponse = await fetchData(location);
+      const forecastResponse = await fetchForecast(location);
+      dispatch(setWeatherData(weatherResponse));
+      dispatch(setForecastData(forecastResponse));
+    } catch (error) {
+      dispatch(setError(error.message));
+    }
+    dispatch(setLoading(false));
     setLocation("");
   };
 
@@ -29,6 +72,7 @@ const SearchInput = ({ fetchData, fetchForecast }) => {
       />
       <button className="search-button" onClick={searchHandler}>
         {isLoading ? "Searching..." : "Search"}
+        {error && <p className="error-message">{error}</p>}
       </button>
     </div>
   );

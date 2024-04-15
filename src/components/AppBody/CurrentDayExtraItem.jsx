@@ -1,11 +1,15 @@
 /* eslint-disable react/prop-types */
 import "./CurrentDayExtraItem.css";
 import LoadSpinnerExtra from "../LoadSpinner/LoadSpinnerExtra";
+import { useSelector } from "react-redux";
+import { selectForecastData } from "../../store/redux";
 
-const CurrentDayExtraItem = ({ data }) => {
+const CurrentDayExtraItem = () => {
+  const forecastData = useSelector(selectForecastData);
+
   return (
     <div className="extra-container">
-      {data ? (
+      {forecastData ? (
         <>
           <div className="extra">
             <div className="extra-info">
@@ -15,9 +19,10 @@ const CurrentDayExtraItem = ({ data }) => {
 
             <div className="extra-data">
               <span>
-                {((data.currentConditions?.feelslike - 32) * (5 / 9)).toFixed(
-                  0
-                )}
+                {(
+                  (forecastData.currentConditions?.feelslike - 32) *
+                  (5 / 9)
+                ).toFixed(0)}
                 °C
               </span>
             </div>
@@ -39,7 +44,7 @@ const CurrentDayExtraItem = ({ data }) => {
               <span>Wind Speed</span>
             </div>
             <div className="extra-data">
-              <span>{data.currentConditions.windspeed} km/h</span>
+              <span>{forecastData.currentConditions.windspeed} km/h</span>
             </div>
           </div>
 
@@ -49,7 +54,7 @@ const CurrentDayExtraItem = ({ data }) => {
               <span>Air Humidity</span>
             </div>
             <div className="extra-data">
-              <span>{data.currentConditions.humidity}%</span>
+              <span>{forecastData.currentConditions.humidity}%</span>
             </div>
           </div>
 
@@ -59,7 +64,7 @@ const CurrentDayExtraItem = ({ data }) => {
               <span>UV Index</span>
             </div>
             <div className="extra-data">
-              <span>{data.currentConditions.uvindex}</span>
+              <span>{forecastData.currentConditions.uvindex}</span>
             </div>
           </div>
         </>

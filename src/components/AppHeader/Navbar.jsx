@@ -1,14 +1,13 @@
-/* eslint-disable react/prop-types */
 import SearchInput from "./SearchInput";
+import { useSelector } from "react-redux";
+import { selectWeatherData } from "../../store/redux";
 import "./Navbar.css";
-
-const Navbar = ({ fetchData, weatherData, fetchForecast }) => {
+const Navbar = () => {
+  const weatherData = useSelector(selectWeatherData);
   return (
     <div className="navbar-container">
       <h1>myWeatherApp</h1>
-      {weatherData && (
-        <SearchInput fetchData={fetchData} fetchForecast={fetchForecast} />
-      )}
+      {weatherData && <SearchInput />}
     </div>
   );
 };
