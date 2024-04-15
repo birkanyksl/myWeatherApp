@@ -41,7 +41,7 @@ const SearchInput = () => {
       );
       return response.data;
     } catch (error) {
-      throw new Error("Error fetching forecast data");
+      throw new Error("Error fetching forecast data ❗");
     }
   };
 
