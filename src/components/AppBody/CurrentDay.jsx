@@ -1,10 +1,12 @@
-/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import getWeatherIcon from "./weatherIcons";
 import "./CurrentDay.css";
+import { selectWeatherData } from "../../store/redux";
 
-const CurrentDay = ({ weatherData }) => {
+const CurrentDay = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
+  const weatherData = useSelector(selectWeatherData);
   useEffect(() => {
     const timerID = setInterval(() => setCurrentTime(new Date()), 1000);
     return () => clearInterval(timerID);

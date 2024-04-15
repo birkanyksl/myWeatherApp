@@ -2,11 +2,9 @@
 import CurrentDayExtraItem from "./CurrentDayExtraItem";
 import "./CurrentDayExtra.css";
 
-const CurrentDayExtra = ({ data }) => {
+const CurrentDayExtra = () => {
   return (
-    <div className="current-extra-container">
-      {<CurrentDayExtraItem data={data} />}
-    </div>
+    <div className="current-extra-container">{<CurrentDayExtraItem />}</div>
   );
 };
 
