@@ -8,7 +8,7 @@ const weatherSlice = createSlice({
     isLoading: false,
     error: null,
   },
-  reducer: {
+  reducers: {
     setWeatherData(state, action) {
       state.weatherData = action.payload;
     },

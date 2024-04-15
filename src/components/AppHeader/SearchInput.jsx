@@ -5,10 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   selectIsLoading,
   selectError,
-  setLoading,
-  setError,
   setWeatherData,
   setForecastData,
+  setLoading,
+  setError,
 } from "../../store/redux";
 import axios from "axios";
 import "./SearchInput.css";
@@ -26,7 +26,9 @@ const SearchInput = () => {
   const fetchData = async (location) => {
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${
+          import.meta.env.REACT_APP_WEATHER_API_KEY
+        }`
       );
       return response.data;
     } catch (error) {
@@ -53,7 +55,7 @@ const SearchInput = () => {
       dispatch(setWeatherData(weatherResponse));
       dispatch(setForecastData(forecastResponse));
     } catch (error) {
-      dispatchEvent(setError(error.message));
+      dispatch(setError(error.message));
     }
     dispatch(setLoading(false));
     setLocation("");
