@@ -28,7 +28,7 @@ export const { setWeatherData, setForecastData, setLoading, setError } =
   weatherSlice.actions;
 
 export const selectWeatherData = (state) => state.weather.weatherData;
-export const selectForecastData = (state) => state.weather.forecastData;
+export const selectForecastData = (state) => state.weather.forecastedData;
 export const selectIsLoading = (state) => state.weather.isLoading;
 export const selectError = (state) => state.weather.error;
 

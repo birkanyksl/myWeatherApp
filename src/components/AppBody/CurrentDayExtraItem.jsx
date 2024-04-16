@@ -34,7 +34,7 @@ const CurrentDayExtraItem = () => {
               <span>Probability of Rain</span>
             </div>
             <div className="extra-data">
-              <span>25</span>
+              <span>2%</span> {/* her iki api de verisi bulunamadı */}
             </div>
           </div>
 

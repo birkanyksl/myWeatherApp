@@ -7,6 +7,7 @@ import { selectWeatherData } from "../../store/redux";
 const CurrentDay = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const weatherData = useSelector(selectWeatherData);
+
   useEffect(() => {
     const timerID = setInterval(() => setCurrentTime(new Date()), 1000);
     return () => clearInterval(timerID);

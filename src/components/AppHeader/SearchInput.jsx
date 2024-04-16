@@ -26,13 +26,13 @@ const SearchInput = () => {
   const fetchData = async (location) => {
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${
-          import.meta.env.REACT_APP_WEATHER_API_KEY
-        }`
+        `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=b6058ec571d529cf74ad389ebb6c0801`
       );
+
       return response.data;
     } catch (error) {
-      throw new Error("Error while fetching weather data ❗ ");
+      dispatch(setError(error.message));
+      throw error;
     }
   };
 
@@ -41,9 +41,11 @@ const SearchInput = () => {
       const response = await axios.get(
         `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=H9XZ4B674XJH93UPCVSKVUUZJ`
       );
+
       return response.data;
     } catch (error) {
-      throw new Error("Error fetching forecast data ❗");
+      dispatch(setError(error.message));
+      throw error;
     }
   };
 
@@ -60,7 +62,6 @@ const SearchInput = () => {
     dispatch(setLoading(false));
     setLocation("");
   };
-
   return (
     <div className="search-input-container">
       <input
@@ -72,8 +73,8 @@ const SearchInput = () => {
       />
       <button className="search-button" onClick={searchHandler}>
         {isLoading ? "Searching..." : "Search"}
-        {error && <p className="error-message">{error}</p>}
       </button>
+      {error && <p className="error-message">{error}</p>}
     </div>
   );
 };
