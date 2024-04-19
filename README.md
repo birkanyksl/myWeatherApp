@@ -1,8 +1,34 @@
-# React + Vite
+# Hava Durumu Uygulaması
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu proje, kullanıcıların belirli bir konumun hava durumunu görmesine olanak tanıyan bir web uygulamasıdır.
 
-Currently, two official plugins are available:
+## Kullanılan Teknolojiler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Bu proje aşağıdaki teknolojilere dayanmaktadır:
+
+- **React**: Kullanıcı arayüzü için temel kütüphane.
+- **Redux Toolkit**: Uygulama durumu yönetimi için kullanılır.
+- **Axios**: API istekleri yapmak için kullanılır.
+- **Vite**: Hızlı ve modern bir geliştirme ortamı sağlar.
+- **React-Redux**: React uygulamalarında Redux kullanımını kolaylaştırır.
+
+## Kurulum
+
+1. Repoyu klonlayın:
+
+```bash
+git clone <repo-url>
+cd myapp
+```
+
+2. Bağımlılıkları yükleyin:
+
+```bash
+npm install
+```
+
+3. Uygulamayı başlatın:
+
+```bash
+npm run dev
+```
