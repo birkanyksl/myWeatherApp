@@ -11,10 +11,12 @@ import {
   setError,
 } from "../../store/redux";
 import axios from "axios";
+import Modal from "../ErrorModal/Modal";
 import "./SearchInput.css";
 
 const SearchInput = () => {
   const [location, setLocation] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const dispatch = useDispatch();
@@ -31,8 +33,9 @@ const SearchInput = () => {
 
       return response.data;
     } catch (error) {
-      dispatch(setError(error.message));
-      throw error;
+      throw new Error(
+        "Location not found. Please check your information and try again."
+      );
     }
   };
 
@@ -44,8 +47,9 @@ const SearchInput = () => {
 
       return response.data;
     } catch (error) {
-      dispatch(setError(error.message));
-      throw error;
+      throw new Error(
+        "Location not found. Please check your information and try again."
+      );
     }
   };
 
@@ -58,6 +62,7 @@ const SearchInput = () => {
       dispatch(setForecastData(forecastResponse));
     } catch (error) {
       dispatch(setError(error.message));
+      setIsModalOpen(true);
     }
     dispatch(setLoading(false));
     setLocation("");
@@ -74,7 +79,9 @@ const SearchInput = () => {
       <button className="search-button" onClick={searchHandler}>
         {isLoading ? "Searching..." : "Search"}
       </button>
-      {error && <p className="error-message">{error}</p>}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <p>{error}</p>
+      </Modal>
     </div>
   );
 };
