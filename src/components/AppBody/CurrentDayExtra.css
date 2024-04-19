@@ -1,8 +1,10 @@
 .current-extra-container {
+  flex: 1;
   color: black;
   background-color: rgb(255, 254, 254);
   border-radius: 0.7rem;
   box-shadow: 1px 10px 20px rgba(187, 164, 164, 0.075),
     inset -2px -5px 5px rgba(0, 0, 0, 0.432);
+  min-width: 35rem;
   width: auto;
 }

@@ -17,6 +17,7 @@
   align-items: center;
   justify-content: center;
   margin: 0.5rem 0.3rem;
+  font-size: 1.2rem;
 
   color: black;
   background-color: rgba(248, 244, 244, 0.13);
@@ -32,24 +33,17 @@
 
 .forecast-temp {
   margin-bottom: 0.2rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .forecast-image img {
   margin-bottom: 0.2rem;
-  width: 6rem;
+  width: 8rem;
   height: auto;
 }
 
 .forecast-minmax {
   margin-bottom: 0.2rem;
-  font-weight: 700;
-}
 
-@media (max-width: 976px) {
-  .forecast-container {
-    height: auto;
-    width: 70%;
-    min-width: 600px;
-  }
+  font-weight: 800;
 }

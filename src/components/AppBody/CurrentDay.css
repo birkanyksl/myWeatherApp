@@ -1,18 +1,20 @@
 .current-container {
   display: flex;
+  flex: 1;
   flex-direction: column;
   row-gap: 3rem;
   padding: 0.5rem 1rem;
+  min-width: 35rem;
+  min-height: 26rem;
+  padding-top: 3rem;
   background-color: rgb(255, 249, 249);
   border-top-left-radius: 5rem;
   border-bottom-right-radius: 2rem;
   border-bottom-left-radius: 1rem;
-
   box-shadow: 1px 10px 6px rgba(228, 222, 222, 0.192),
     inset -3px -5px 5px rgba(0, 0, 0, 0.411),
     -2px -1px 1px rgba(116, 113, 113, 0),
     inset 1px 4px 5px rgba(173, 172, 171, 0.411);
-
   width: auto;
 }
 .current-data-container {
@@ -45,7 +47,7 @@
   color: black;
 }
 .weather-info p {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 900;
   margin: 0;
 }
@@ -53,12 +55,18 @@
   display: flex;
   flex-direction: column;
   margin-left: 1rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 900;
   color: rgb(0, 0, 0);
 }
-
+.current-data-img {
+  position: relative;
+}
 .current-data-img img {
-  width: 15rem;
+  position: absolute;
+  bottom: -7rem;
+  left: -1rem;
+  width: 21rem;
   margin: 0;
   height: auto;
 }

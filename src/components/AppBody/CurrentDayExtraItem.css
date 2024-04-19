@@ -13,31 +13,27 @@
   column-gap: 3rem;
   bottom: none;
   padding: 0.5rem;
-  margin: 0 0.5rem;
+  margin: 0.05rem 0.5rem;
   min-width: 10rem;
 }
 
 .extra-info {
   display: flex;
   flex-direction: row;
-  column-gap: 0.6rem;
+  column-gap: 0.7rem;
 }
 
 .extra-info span {
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 700;
 }
 
 .extra-info img {
-  width: 1.6rem;
+  width: 2.5rem;
   height: auto;
 }
 
 .extra-data span {
-  font-weight: 600;
-}
-
-@media (max-width: 976px) {
-  .extra-container {
-    row-gap: 1rem;
-  }
+  font-size: 1.3rem;
+  font-weight: 700;
 }
