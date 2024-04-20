@@ -13,6 +13,8 @@ import {
 import axios from "axios";
 import Modal from "../ErrorModal/Modal";
 import "./SearchInput.css";
+const OPENWEATHER_API_KEY = process.env.OPENWEATHER_API_KEY;
+const VISUALCROSSING_API_KEY = process.env.VISUALCROSSING_API_KEY;
 
 const SearchInput = () => {
   const [location, setLocation] = useState("");
@@ -28,7 +30,7 @@ const SearchInput = () => {
   const fetchData = async (location) => {
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=b6058ec571d529cf74ad389ebb6c0801`
+        `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${OPENWEATHER_API_KEY}`
       );
 
       return response.data;
@@ -42,7 +44,7 @@ const SearchInput = () => {
   const fetchForecast = async (location) => {
     try {
       const response = await axios.get(
-        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=H9XZ4B674XJH93UPCVSKVUUZJ`
+        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${VISUALCROSSING_API_KEY}`
       );
 
       return response.data;
@@ -67,6 +69,7 @@ const SearchInput = () => {
     dispatch(setLoading(false));
     setLocation("");
   };
+
   return (
     <div className="search-input-container">
       <input

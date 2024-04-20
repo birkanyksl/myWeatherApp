@@ -8,20 +8,19 @@
   backdrop-filter: blur(4px);
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .modal {
   background-color: rgba(230, 222, 222, 0.651);
   color: black;
-  border: 2px dashed rgba(36, 4, 4, 0.459);
   border-radius: 2rem;
-  box-shadow: 0 0 10px rgba(255, 3, 3, 0.486);
+  box-shadow: 0 0 10px rgb(255, 3, 3);
   padding: 2rem;
   max-width: 80%;
   max-height: 80%;
   width: 30rem;
-  height: auto;
+  height: 10rem;
+  margin-top: 5rem;
   font-weight: 800;
   overflow: auto;
 }
