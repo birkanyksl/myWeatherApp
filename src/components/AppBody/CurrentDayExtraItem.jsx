@@ -11,7 +11,7 @@ const CurrentDayExtraItem = () => {
       <>
         <div className="extra">
           <div className="extra-info">
-            <img src="./img/extraicons/fellsalike.png" alt="extra-img" />
+            <img src="fellsalike.png" alt="extra-img" />
             <span>Thermal Sensation</span>
           </div>
 
@@ -28,7 +28,7 @@ const CurrentDayExtraItem = () => {
 
         <div className="extra">
           <div className="extra-info">
-            <img src="./img/extraicons/rain.png" alt="extra-img" />
+            <img src="rainy.png" alt="extra-img" />
             <span>Probability of Rain</span>
           </div>
           <div className="extra-data">
@@ -38,7 +38,7 @@ const CurrentDayExtraItem = () => {
 
         <div className="extra">
           <div className="extra-info">
-            <img src="./img/extraicons/wind.png" alt="extra-img" />
+            <img src="wind.png" alt="extra-img" />
             <span>Wind Speed</span>
           </div>
           <div className="extra-data">
@@ -48,7 +48,7 @@ const CurrentDayExtraItem = () => {
 
         <div className="extra">
           <div className="extra-info">
-            <img src="./img/extraicons/humidity.png" alt="extra-img" />
+            <img src="humidity.png" alt="extra-img" />
             <span>Air Humidity</span>
           </div>
           <div className="extra-data">
@@ -58,7 +58,7 @@ const CurrentDayExtraItem = () => {
 
         <div className="extra">
           <div className="extra-info">
-            <img src="./img/extraicons/uv.png" alt="extra-img" />
+            <img src="uv.png" alt="extra-img" />
             <span>UV Index</span>
           </div>
           <div className="extra-data">

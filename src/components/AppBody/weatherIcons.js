@@ -12,7 +12,7 @@ const getWeatherIcon = (condition) => {
     case "230":
     case "231":
     case "232":
-      iconPath = "img/weatherconditions/thunderstorm.png";
+      iconPath = "thunderstorm.png";
       break;
 
     // Drizzle
@@ -25,7 +25,7 @@ const getWeatherIcon = (condition) => {
     case "313":
     case "314":
     case "321":
-      iconPath = "img/weatherconditions/shower-rain.png";
+      iconPath = "shower-rain.png";
       break;
 
     // Rain
@@ -39,7 +39,7 @@ const getWeatherIcon = (condition) => {
     case "521":
     case "522":
     case "531":
-      iconPath = "img/weatherconditions/rain.png";
+      iconPath = "rainn.png";
       break;
 
     // Snow
@@ -54,7 +54,7 @@ const getWeatherIcon = (condition) => {
     case "620":
     case "621":
     case "622":
-      iconPath = "img/weatherconditions/snow.png";
+      iconPath = "snowy.png";
       break;
 
     // Atmosphere
@@ -68,53 +68,53 @@ const getWeatherIcon = (condition) => {
     case "762":
     case "771":
     case "781":
-      iconPath = "img/weatherconditions/mist.png";
+      iconPath = "mist.png";
       break;
 
     // Clear sky
     case "800":
-      iconPath = "img/weatherconditions/clear-sky.png";
+      iconPath = "clear-sky.png";
       break;
 
     // Few clouds
     case "801":
-      iconPath = "img/weatherconditions/few-clouds.png";
+      iconPath = "few-clouds.png";
       break;
 
     // Scattered clouds
     case "802":
-      iconPath = "img/weatherconditions/scattered-clouds.png";
+      iconPath = "scattered-clouds.png";
       break;
 
     // Broken clouds
     case "803":
     case "804":
-      iconPath = "img/weatherconditions/broken-clouds.png";
+      iconPath = "broken-clouds.png";
       break;
 
     // Shower rain
     case "09":
-      iconPath = "img/weatherconditions/shower-rain.png";
+      iconPath = "shower-rain.png";
       break;
 
     // Rain
     case "10":
-      iconPath = "img/weatherconditions/rain.png";
+      iconPath = "rainn.png";
       break;
 
     // Thunderstorm
     case "11":
-      iconPath = "img/weatherconditions/thunderstorm.png";
+      iconPath = "/thunderstorm.png";
       break;
 
     // Snow
     case "13":
-      iconPath = "img/weatherconditions/snow.png";
+      iconPath = "now.png";
       break;
 
     // Mist
     case "50":
-      iconPath = "img/weatherconditions/mist.png";
+      iconPath = "mist.png";
       break;
 
     default:

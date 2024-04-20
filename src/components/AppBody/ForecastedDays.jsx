@@ -32,10 +32,7 @@ const ForecastedDays = () => {
             <div className="forecast-temp">{day.temp.toFixed(0)}°C</div>
 
             <div className="forecast-image">
-              <img
-                src={`./img/forecasticons/${day.icon}.png`}
-                alt="Weather Icon"
-              />
+              <img src={`${day.icon}.png`} alt="Weather Icon" />
             </div>
 
             <div className="forecast-minmax">
