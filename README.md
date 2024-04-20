@@ -1,6 +1,8 @@
 # Hava Durumu Uygulaması
 
-Bu proje, kullanıcıların belirli bir konumun hava durumunu görmesine olanak tanıyan bir web uygulamasıdır.
+Bu proje, kullanıcıların belirli bir konumun hava durumunu görmesine olanak tanıyan bir web uygulamasıdır. 
+
+birkan-myweatherapp.netlify.app
 
 ## Kullanılan Teknolojiler
 
