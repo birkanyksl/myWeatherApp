@@ -2,7 +2,8 @@
 
 Bu proje, kullanıcıların belirli bir konumun hava durumunu görmesine olanak tanıyan bir web uygulamasıdır. 
 
-birkan-myweatherapp.netlify.app
+[MyWeatherApp](https://birkan-myweatherapp.netlify.app/)
+
 
 ## Kullanılan Teknolojiler
 
