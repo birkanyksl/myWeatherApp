@@ -8,6 +8,7 @@
   backdrop-filter: blur(4px);
   display: flex;
   justify-content: center;
+  z-index: 1;
 }
 
 .modal {
@@ -21,7 +22,8 @@
   width: 30rem;
   height: 10rem;
   margin-top: 5rem;
-  font-weight: 800;
+  font-size: 1.2rem;
+  font-weight: 600;
   overflow: auto;
 }
 
