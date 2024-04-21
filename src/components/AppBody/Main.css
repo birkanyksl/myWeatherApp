@@ -140,8 +140,7 @@
     min-width: 35rem;
     min-height: 10rem;
 
-    border-bottom-right-radius: 0rem;
-    border-bottom-left-radius: 1rem;
+    
     box-shadow: -2px -1px 1px rgba(116, 113, 113, 0),
       inset 1px 4px 5px rgba(173, 172, 171, 0.411);
   }
@@ -156,8 +155,7 @@
     min-width: 35rem;
     min-height: 10rem;
     margin-bottom: 0.2rem;
-    border-top-right-radius: 0rem;
-    border-bottom-right-radius: 0rem;
+    
     box-shadow: -2px -1px 1px rgba(116, 113, 113, 0),
       inset 1px 4px 5px rgba(173, 172, 171, 0.411);
   }
@@ -212,17 +210,16 @@
     justify-content: center;
     align-items: center;
     min-width: 35rem;
-    min-height: 10rem;
+    min-height: 3rem;
     column-gap: 1.4rem;
     margin-bottom: 1rem;
-    border-top-right-radius: 0rem;
-    border-bottom-right-radius: 0rem;
+    
     box-shadow: -2px -1px 1px rgba(116, 113, 113, 0),
       inset 1px 4px 5px rgba(173, 172, 171, 0.411);
   }
 
   .forecast-item-container {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 
   .forecast-item {
@@ -405,7 +402,8 @@
   }
 
   .forecast-item-container {
-    margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
   }
 
   .forecast-item {
@@ -433,12 +431,12 @@
 @media only screen and (max-width: 420px) {
   .current-container {
     min-width: 15rem;
-    max-height: 13rem;
+    max-height: 12rem;
     
   }
 
   .current-data span{
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     
   }
 
@@ -462,17 +460,22 @@
 
   .current-extra-container {
     min-width: 15rem;
-    max-height: 13rem;
+    max-height: 10rem;
+    background-color: aquamarine;
     
   }
   .extra-container {
-    max-width: 15rem;  
+    max-width: 12rem;  
     margin: 0;
-    row-gap: 0
+    row-gap: 0;
+    
   }
   .extra{
     width: 15rem;
     margin-left: -1.4rem;
+    padding: 0.2rem;
+    margin-top: 0;
+    margin-bottom: 0;
     
   }
 
@@ -488,5 +491,48 @@
   .extra-data span {
     font-size: 0.6rem;
     font-weight: 400;
+  }
+
+  .div-forecast {
+    min-width: 8rem;
+    max-height: 5rem;
+    
+   
+  }
+
+  .forecast-container {
+    max-width: 17rem;
+    max-height: 7rem;
+    
+    
+    column-gap: 0.3rem;
+  }
+
+  .forecast-item-container {
+    margin-bottom: 1rem;
+  }
+
+  .forecast-item {
+    
+    width: 2.3rem;
+     font-size: 0.5rem;
+  }
+
+  .forecast-image img {
+    width: 1.3rem;
+    height: auto;
+  }
+  .forecast-minmax {
+    padding-left: 2.2rem;
+    font-size: 0.3rem;
+    font-weight: 600;
+  }
+  .forecast-temp {
+    font-size: 0.4rem;
+    font-weight: 600;
+  }
+  .forecast-day {
+    font-size: 0.4rem;
+    font-weight: 600;
   }
 }
