@@ -429,3 +429,64 @@
     font-weight: 400;
   }
 }
+
+@media only screen and (max-width: 420px) {
+  .current-container {
+    min-width: 15rem;
+    max-height: 13rem;
+    
+  }
+
+  .current-data span{
+    font-size: 0.7rem;
+    
+  }
+
+  .weather-info p {
+    margin-left: 1rem;
+    font-size: 2rem;
+  }
+
+  .weather-info span {
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .current-data-img img {
+    
+    bottom: 0.5rem;
+    left: 1rem;
+    width: 4rem;
+    
+  }
+
+  .current-extra-container {
+    min-width: 15rem;
+    max-height: 13rem;
+    
+  }
+  .extra-container {
+    max-width: 15rem;  
+    margin: 0;
+    row-gap: 0
+  }
+  .extra{
+    width: 15rem;
+    margin-left: -1.4rem;
+    
+  }
+
+  .extra-info img {
+    width: 1rem;
+    height: auto;
+  }
+  .extra-info span {
+    font-size: 0.6rem;
+    font-weight: 400;
+  }
+
+  .extra-data span {
+    font-size: 0.6rem;
+    font-weight: 400;
+  }
+}
