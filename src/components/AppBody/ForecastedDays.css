@@ -4,10 +4,10 @@
   flex-wrap: wrap;
   justify-content: center;
   padding: 1rem;
+  margin-bottom: 1rem;
   background-color: rgb(255, 255, 255);
   border-radius: 0.7rem;
-  box-shadow: 1px 10px 20px rgba(230, 222, 222, 0.075),
-    inset -3px -5px 6px rgba(7, 6, 6, 0.534);
+  
   width: auto;
 }
 
